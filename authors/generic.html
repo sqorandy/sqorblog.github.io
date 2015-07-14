@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+{% assign posts = site.posts | where: "author", "Doug" %}
+<ul>
+{% for post in posts limit:10 %}
+  <Ol><a href="{{post.url}}">{{ post.title }}</a></ol>
+{% endfor %}
+</ul>
