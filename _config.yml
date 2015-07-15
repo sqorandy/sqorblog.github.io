@@ -1,0 +1,9 @@
+timezone: America/Los_Angeles
+highlighter: pygments
+permalink: "/:title"
+name: Sqor Sports Blog
+description: A Technical Blog to showcase our open source materials
+url: http://http://amplify-social.github.io/
+excerpt_separator: ""
+exclude: ['_site']
+

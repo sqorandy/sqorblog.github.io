@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include head_links.html %}
+    </head>
+	<body>
+		{% include header.html %}
+		<div class="page-wrap">
+			<div class="post_container">
+				<div class="row">
+					<div class="col l8 m12 s12">
+						<article class="card">
+						    <header class="teal lighten-1 z-depth-2 white-text">
+						        <h2 class="post_title">{{ page.title }}</h2>
+						        <h4 class="time"><time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></h4>
+						        <div>
+						        	{% if page.gravatar %}<img class="gravatar" src="http://www.gravatar.com/avatar/{{page.gravatar}}" />{% else %}<img class="gravatar" src="/assets/images/sqor_logo.png">{% endif %}
+						        </div>
+						        <div>
+						        	{% if page.author %}<h4 class="post_author">Posted by:&nbsp;&nbsp;{{page.author}}</h4>{% else %}<h4 class="site_author">Posted by:&nbsp;&nbsp;{{site.author}}</h4>{% endif%}
+						        </div>
+						    </header>
+							<div class="entry">{{ content }}</div>
+							<div class="tags">
+								<h6 class="tags_title">Tags: {{page.tags | array_to_sentence_string}}</h6>
+							</div><br/>
+							<ul class="social-plugins center-align">
+							  	<li><script type="text/javascript" src="//www.redditstatic.com/button/button3.js"></script></li>
+							  	<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="Sqor">Tweet</a></li>
+							  	<li><a href="http://news.ycombinator.com/submitlink?u=http://amplify-social.github.com{{ page.url }}&t={{ page.title }}"><img src="/assets/images/y-comb-icon.png"></a></li>
+						  	</ul>
+						</article>
+					</div>
+					<div class=" archive-card col l4 m12 s12">
+						<div class="card">
+							<ul class="collapsible popout" data-collapsible="expandable">
+							    <li>
+							      <div class="card collapsible-header teal lighten-1 white-text waves-effect waves-light z-depth-2"><h5 class="center-align">Posts By This Author</h5></div>
+							      <div class="collapsible-body">
+										{% assign posts = site.posts | where: "author", {{page.author}} %}
+										{% for post in posts limit:10 %}
+			  								<h5>{{post.date | date_to_string }}&nbsp;&nbsp;&nbsp;<a class="index_post" href="{{post.url}}">{{ post.title }}</a></h5>
+										{% endfor %}
+							      </div>
+							    </li>
+							    <li>
+							      <div class="card collapsible-header teal lighten-1 white-text waves-effect waves-light z-depth-2"><h5 class="center-align">Full Archive</h5></div>
+							      <div class="collapsible-body">
+										{% for post in site.posts %}
+				     						<h5>{{ post.date | date_to_string }}&nbsp;&nbsp;&nbsp;<a class="index_post" href="{{ post.url }}">{{post.title}}</a></h5>
+				  						{% endfor %}
+							      </div>
+							    </li>
+						  	</ul>
+					  	</div>
+				  	</div>
+				  	<div class="col l4 m12 s12">
+				  		<div class="card disqus">
+				  		{% include disqus.html %}
+				  		</div>
+				  	</div>
+				</div>
+			</div>
+			<p class="copy">&copy; <time>{{ site.time | date: '%Y' }}</time> Sqor, Inc.  Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="http://materializecss.com">Materialize</a></p>
+		</div>
+	{% include scripts.html %}
+	</body>
+
+</html>

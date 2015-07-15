@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include head_links.html %}
+    </head>
+	<body>
+		<header>
+			{% include header.html %}
+		</header>
+		<div class="page-wrap">
+			<div class="post_container">
+				{{ content }}
+			</div>
+			<p class="copy">&copy; <time>{{ site.time | date: '%Y' }}</time> Sqor, Inc.  Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="http://materializecss.com">Materialize</a></p>
+		</div>
+	{% include scripts.html %}
+	</body>
+</html>

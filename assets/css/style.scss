@@ -1,0 +1,166 @@
+---
+#
+---
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	margin-top: -12px;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+}
+a {
+	text-decoration: none;
+	color: #26a69a;
+}
+a:hover {
+	color: black;
+}
+.page-wrap {
+	height: 100%;
+	width: 100%;
+	min-height: 700px;
+	margin: 0 auto;
+}
+nav {
+	background-color: #26a69a !important;
+	height: 70px;
+	border-bottom: 5px solid black;
+	color: red;
+	.brand-logo {
+		margin-left: 5px;
+	}
+}
+.header a {
+	color: white;
+	&:hover {
+		color: black;
+	}
+}
+.nav_menu {
+	text-align: center;
+	width: 100%;
+	padding-left: 0;
+	margin-top: 10px;
+}
+.nav_menu li {
+	display: inline;
+	list-style-type: none;
+	padding: 5px;	
+}
+.copy {
+	text-align: center;
+	a {
+		color: #26a69a;
+		&:hover {
+			color: black;
+		}
+	}
+}
+.main-title {
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+}
+.index_post {
+	text-decoration: none;
+	color: #26a69a;
+}
+.index-card, .tag-card {
+	overflow: inherit !important;
+}
+.index-posts {
+	margin-top: 15px;
+}
+.post_title, .site_author, .post_author, .pagination {
+	text-align: center;
+}
+.entry {
+	padding: 0 5px; 
+}
+article {
+	margin: 8px !important;
+	min-height: 500px;
+	overflow: inherit !important;
+}
+body {
+	background-color: #EEEEEE;
+}
+p {
+	color: black;
+	font-family: 'Lato', sans-serif;
+	margin-bottom: 1.5em;
+}
+.post_container {
+	display: inline-block;
+	width: 100%;
+	min-height: 300px;
+}
+.archive, .author_posts {
+	margin: 8px !important;
+	float: right;
+	font-family: 'Lato', sans-serif;
+}
+.archive-header a, .author_post_header {
+	color: white !important;
+}
+.archive-card {
+	margin: 19px 0 10px 0;
+}
+/*.sidebar {
+	position: fixed;
+	top: 60px;
+	right: 0;
+	float: right; 
+	max-height: 500px;
+}*/
+@media (max-width: 1166px) {
+	article, img {
+		float: none !important;
+		margin: 8px auto !important;
+	}
+}
+@media (max-width: 473px) {
+	.header {
+		height: 80px;
+	}
+	.nav_menu {
+		max-width: 400px;
+	}
+}
+.social-plugins li {
+	display: inline;
+	list-style-type: none;
+	padding: 10px;
+}
+.tags_list {
+	font-family: 'Lato', sans-serif;
+	min-height: 625px;
+}
+.tag_post {
+	color: #26a69a;
+}
+.tags_title {
+	text-transform: uppercase;
+	text-align: center;
+}
+.time {
+	text-align: center;
+}
+.gravatar {
+	border-radius: 100px;
+	height: 100px;
+	width: 100px;
+	display: block;
+  	margin: 0 auto;
+}
+.disqus {
+	padding: 5px;
+}
